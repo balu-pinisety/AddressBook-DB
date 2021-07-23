@@ -31,3 +31,7 @@ select * from address_book;
 #UC4-To edit existing details of Contact
 update address_book set address='Gokley' where first_name='Abhishek';
 select * from address_book;
+
+#UC5-To delete a contact using name
+delete from address_book where first_name='Abhishek';
+select * from address_book;
