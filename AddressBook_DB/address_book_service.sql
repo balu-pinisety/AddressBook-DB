@@ -38,3 +38,7 @@ select * from address_book;
 
 #UC6-To retrieve contacts belongs to city or state
 select * from  address_book where city='Bhimavaram' or state='Telangana';
+
+#UC7-Size of book by city and state
+select state, count(first_name) from address_book group by state; #Count by state
+select city, count(first_name) from address_book group by city; #Count by city
