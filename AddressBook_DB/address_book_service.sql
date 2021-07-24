@@ -35,3 +35,6 @@ select * from address_book;
 #UC5-To delete a contact using name
 delete from address_book where first_name='Abhishek';
 select * from address_book;
+
+#UC6-To retrieve contacts belongs to city or state
+select * from  address_book where city='Bhimavaram' or state='Telangana';
