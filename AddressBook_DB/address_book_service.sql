@@ -45,3 +45,11 @@ select city, count(first_name) from address_book group by city; #Count by city
 
 #UC8-To sort the contacts for given city
 select * from address_book where city="Bhimavaram" order by first_name asc;
+
+#UC9-To Identify each Book with Name and Type
+alter table address_book add type varchar(31);
+select * from address_book;
+update address_book set type='FAMILY' where first_name='Vaishnavi' or first_name='Naga';
+update address_book set type='FRIEND' where first_name='Balu' or first_name='Mani';
+update address_book set type='PROFESSION' where first_name='Nithin' or first_name='Abhishek';
+select * from address_book;
