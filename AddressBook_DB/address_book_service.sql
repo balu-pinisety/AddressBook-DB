@@ -53,3 +53,6 @@ update address_book set type='FAMILY' where first_name='Vaishnavi' or first_name
 update address_book set type='FRIEND' where first_name='Balu' or first_name='Mani';
 update address_book set type='PROFESSION' where first_name='Nithin' or first_name='Abhishek';
 select * from address_book;
+
+#UC10-To get no.of contacts by type
+select type, count(first_name) from address_book group by type; #Count by type
