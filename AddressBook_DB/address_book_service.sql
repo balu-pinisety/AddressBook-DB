@@ -62,3 +62,36 @@ insert into address_book(first_name,last_name,address,city,state,zip,phone_numbe
 ('Abhishek','Prathi','Gokul','Vegas','Canada',634258,9121522521,'prathiabhishek@gmail.com','FRIEND');
 insert into address_book(first_name,last_name,address,city,state,zip,phone_number,email,type) values
 ('Abhishek','Prathi','Gokul','Vegas','Canada',634258,9121522521,'prathiabhishek@gmail.com','FAMILY');
+
+#UC12-ER diagram of addressbook
+create table contact(
+	cont_id int auto_increment not null,
+	first_name varchar(21) not null,
+	last_name varchar(21) not null,
+    phone_number long not null,
+	email varchar(50) not null,
+    primary key (contact_id)
+);
+create table  address(
+	add_id int auto_increment not null,
+	address varchar(150) not null,
+	city varchar(31) not null,
+	state varchar(31) not null,
+	zip int not null,
+    primary key (address_id)
+);
+create table contact_address(
+conact_id int not null,
+address_id int not null,
+foreign key (contact_id) references contact(cont_id),
+foreign key (address_id) references address(add_id),
+primary key (contact_id, address_id)
+);
+create table book_details(
+	id int auto_increment not null,
+    book_name varchar(40) not null,
+    book_type varchar(21) not null,
+    constraint book_unique unique (book_name),
+    book_id int,
+    foreign key (book_id) references contact(id)
+);
